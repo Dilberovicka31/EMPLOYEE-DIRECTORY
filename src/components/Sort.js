@@ -15,8 +15,8 @@ function Sort ({sortAscending, sortDescending}){
 //   </div>
 // </div>
 <div className="btn-group" role="group" aria-label="Basic example">
-  <button  type="button"className="btn btn-secondary" style={{backgroundColor: "#ccf7f4",color: "black"}}>Sort Ascending</button> {""}
-  <button type="button" className="btn btn-secondary" style={{backgroundColor: "#ccf7f4", color: "black"}}>Sort Descending</button>
+  <button onClick={sortAscending} type="button"className="btn btn-secondary" style={{backgroundColor: "#DCEEE4",color: "black"}}>Sort Ascending</button> {""}
+  <button onClick={sortDescending} type="button" className="btn btn-secondary" style={{backgroundColor: "#DCEEE4", color: "black"}}>Sort Descending</button>
   
 </div>
     )}

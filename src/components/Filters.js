@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 function Filters({ search, handleInputChange, handleFormSubmit }) {
   return (
-    <form className="search w-25 float-right">
+    <form className="search w-25 float-right ">
       <div className="input-group">
         {/* <label htmlFor="search"> Search Employees</label> */}
         <input
@@ -15,7 +15,7 @@ function Filters({ search, handleInputChange, handleFormSubmit }) {
         />
         <br />
         <div className="input-group-append">
-          <button onClick={handleFormSubmit} className="btn btn-primary">
+          <button onClick={handleFormSubmit} className="btn btn-primary" style={{backgroundColor: "#DCEEE4", color: "black"}}>
             Search
           </button>
         </div>{" "}

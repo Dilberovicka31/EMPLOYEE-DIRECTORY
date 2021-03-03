@@ -6,7 +6,7 @@ function Card({ users }) {
   return (
     <div className="App ">
       <div className="row mt-5">
-        <div className="card mx-auto col-6">
+        <div className="card mx-auto col-6 shadow p-3 mb-5 bg-white rounded">
           <div className="card-body">
             {users
               ? users.map((user, index) => {

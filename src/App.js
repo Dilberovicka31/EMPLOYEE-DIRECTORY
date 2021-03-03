@@ -37,36 +37,44 @@ class SearchEmployees extends Component {
     console.log(this.state.users);
     const result = this.state.users.filter(
       (user) =>
-        user.name.first.toLowerCase() === this.state.search.toLowerCase()
+        user.name.first.toLowerCase() === this.state.search.toLowerCase() ||
+        user.name.last.toLowerCase() === this.state.search.toLowerCase()
     );
     this.setState({ users: result });
 
     console.log(result);
+    
+
   };
-   sortAscending = (e) =>{
-     const {name,value} = e.target;
-     this.setState({[name]:value})
-     const sortingAs = this.state.users.sort((a,b) =>
-     (a.name.first > a.name.first) ? 1: -1)
-     this.setState({users:sortingAs})
-   }
-  
-   sortDescending = (e) =>{
-    const {name,value} = e.target;
-    this.setState({[name]:value})
-    const sortingDes = this.state.users.sort((a,b) =>
-    (a.name.first > a.name.first) ? 1: -1)
-    this.setState({users:sortingDes})
-  }
   
 
+  sortAscending = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+    const sortingAs = this.state.users.sort(
+      (a, b) =>
+      a.name.first > a.name.first ? 1 : -1
+    );
+    this.setState({ users: sortingAs });
+    console.log(sortingAs)
+  };
+
+  sortDescending = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+    const sortingDes = this.state.users.sort((a, b) =>
+      a.name.first < a.name.first ? 1 : -1
+    );
+    this.setState({ users: sortingDes });
+    console.log(sortingDes)
+  };
 
   render() {
     return (
       <Container>
         <Sort
-        sortAscending= {this.sortAscending}
-        sortDescending ={this.sortDescending}
+          sortAscending={this.sortAscending}
+          sortDescending={this.sortDescending}
         />
         <Filters
           value={this.state.search}
