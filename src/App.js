@@ -1,3 +1,4 @@
+/* eslint-disable no-self-compare */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 import React, { Component } from "react";
@@ -6,6 +7,7 @@ import Card from "./components/Card";
 import Filters from "./components/Filters";
 import API from "./utils/API";
 import Sort from "./components/Sort";
+import Container from "./components/Container";
 
 class SearchEmployees extends Component {
   state = {
@@ -41,23 +43,31 @@ class SearchEmployees extends Component {
 
     console.log(result);
   };
-  sortUsersAsc = () => {
-    const ascendingList = this.state.users.sort((a, b) =>
-      a.name.last > b.name.last ? 1 : -1
-    );
-    this.setState({ users: ascendingList });
-  };
-  sortUsersDesc = () => {
-    const descendingList = this.state.users.sort((a, b) =>
-      a.name.last < b.name.last ? 1 : -1
-    );
-    this.setState({ users: descendingList });
-  };
+   sortAscending = (e) =>{
+     const {name,value} = e.target;
+     this.setState({[name]:value})
+     const sortingAs = this.state.users.sort((a,b) =>
+     (a.name.first > a.name.first) ? 1: -1)
+     this.setState({users:sortingAs})
+   }
+  
+   sortDescending = (e) =>{
+    const {name,value} = e.target;
+    this.setState({[name]:value})
+    const sortingDes = this.state.users.sort((a,b) =>
+    (a.name.first > a.name.first) ? 1: -1)
+    this.setState({users:sortingDes})
+  }
+  
+
 
   render() {
     return (
-      <div className="container">
-        <Sort />
+      <Container>
+        <Sort
+        sortAscending= {this.sortAscending}
+        sortDescending ={this.sortDescending}
+        />
         <Filters
           value={this.state.search}
           handleInputChange={this.handleInputChange}
@@ -65,7 +75,7 @@ class SearchEmployees extends Component {
         />{" "}
         <Header />
         <Card users={this.state.users} />
-      </div>
+      </Container>
     );
   }
 }

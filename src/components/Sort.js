@@ -1,17 +1,23 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import "./sort.css"
 /* eslint-disable no-undef */
-function Sort ({sortUsersAsc,sortUsersDesc}){
+function Sort ({sortAscending, sortDescending}){
    
       
       return (
-        <div className="input-group w-25 mb-3 float-left">
-  <select className="custom-select" id="inputGroupSelect04">
-    <option>Sort employees</option>
-    <option value="1" onClick={sortUsersAsc}>Sort by ascending order</option>
-    <option value="2" onClick={sortUsersDesc}>Sort by descending order</option>
-  </select>
-  <div className="input-group-append">
-    <button className="btn btn-outline-primary" type="button">Sort</button>
-  </div>
+        // <div className="input-group w-25 mb-3 float-left">
+  
+//   <div className="card">
+//     <button onClick={sortAscending} className="btn btn-outline-secondary w-25 float-left" type="button">Sort </button>
+//     <p className="float-right">Sort Employees by ascending order</p>
+//     <button onClick={sortDescending} className="btn btn-outline-secondary w-25 float-left" type="button">Descending</button>
+//     <p>Sort Employees by descending order</p>
+//   </div>
+// </div>
+<div className="btn-group" role="group" aria-label="Basic example">
+  <button  type="button"className="btn btn-secondary" style={{backgroundColor: "#ccf7f4",color: "black"}}>Sort Ascending</button> {""}
+  <button type="button" className="btn btn-secondary" style={{backgroundColor: "#ccf7f4", color: "black"}}>Sort Descending</button>
+  
 </div>
     )}
 
