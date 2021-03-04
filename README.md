@@ -14,7 +14,8 @@
 
 Employee directory created with React.
 
-![screencapture-localhost-3000-2021-03-02-21_40_41](https://user-images.githubusercontent.com/71347282/109758507-8a49ac80-7ba0-11eb-9ea7-bc313aa88136.png)
+![screencapture-localhost-3000-2021-03-04-11_39_30](https://user-images.githubusercontent.com/71347282/110020416-5f657280-7cde-11eb-9307-c46bf8368064.png)
+
 
 ## Table of Contents
 
