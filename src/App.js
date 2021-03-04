@@ -15,12 +15,18 @@ class SearchEmployees extends Component {
     search: "",
   };
 
+ 
+
   componentDidMount() {
+   
     this.searchUsers();
   }
   searchUsers() {
     API.searchUsers()
-      .then((res) => this.setState({ users: res.data.results }))
+      .then((res) => {
+        this.setState({ users: res.data.results })
+        
+      })
 
       .catch((err) => console.log(err));
   }
@@ -53,7 +59,7 @@ class SearchEmployees extends Component {
     this.setState({ [name]: value });
     const sortingAs = this.state.users.sort(
       (a, b) =>
-      a.name.first > a.name.first ? 1 : -1
+      a.name.first.localeCompare(b.name.first)
     );
     this.setState({ users: sortingAs });
     console.log(sortingAs)
@@ -63,7 +69,7 @@ class SearchEmployees extends Component {
     const { name, value } = e.target;
     this.setState({ [name]: value });
     const sortingDes = this.state.users.sort((a, b) =>
-      a.name.first < a.name.first ? 1 : -1
+      b.name.first.localeCompare(a.name.first)
     );
     this.setState({ users: sortingDes });
     console.log(sortingDes)
