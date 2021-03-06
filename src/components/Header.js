@@ -3,7 +3,7 @@
 import "./header.css";
 function Header() {
     return (
-        <div className="jumbotron jumbotron-fluid shadow p-3 mb-5 bg-white rounded">
+        <div className="jumbotron jumbotron-fluid shadow p-3 mb-5 bg-white rounded im">
       <div className="container">
         <h1 className="display-4 float-right">Employee Database</h1>
       </div>

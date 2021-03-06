@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 function Filters({ search, handleInputChange, handleFormSubmit }) {
   return (
-    <form className="search w-25 float-right ">
+    <form className="search w-50">
       <div className="input-group">
         {/* <label htmlFor="search"> Search Employees</label> */}
         <input
