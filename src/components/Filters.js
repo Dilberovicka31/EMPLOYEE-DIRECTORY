@@ -15,7 +15,11 @@ function Filters({ search, handleInputChange, handleFormSubmit }) {
         />
         <br />
         <div className="input-group-append">
-          <button onClick={handleFormSubmit} className="btn btn-primary" style={{backgroundColor: "#DCEEE4", color: "black"}}>
+          <button
+            onClick={handleFormSubmit}
+            className="btn btn-primary"
+            style={{ backgroundColor: "#DCEEE4", color: "black" }}
+          >
             Search
           </button>
         </div>{" "}

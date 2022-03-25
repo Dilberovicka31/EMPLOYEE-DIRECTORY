@@ -4,13 +4,14 @@ import React from "react";
 
 function Card({ users }) {
   return (
-    <div className="App">
+    <div className="container">
       <div className="row mt-5">
-        <div className="card mx-auto col-6 shadow p-3 mb-5 bg-white rounded">
-          <div className="card-body">
+        
             {users
               ? users.map((user, index) => {
-                  return (
+                  return (<div className="col-4">
+        <div className="card mx-auto shadow p-3 mb-5 bg-white rounded">
+          <div className="card-body">
                     <ul className="list-group" key={index}>
                       <img
                         className="card-img-top"
@@ -28,17 +29,16 @@ function Card({ users }) {
                       <li className="list-group-item">
                         Location: {user.location.city}
                       </li>
-                    </ul>
+                    </ul>  </div>
+      </div>{" "}
+      </div>
                   );
                 })
-              : " "}
+            : null}
           </div>
-        </div>
-      </div>
-      {" "}
-     
+      
     </div>
-    
+
     // </div>
   );
 }

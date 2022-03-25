@@ -44,7 +44,7 @@ class SearchEmployees extends Component {
     const result = this.state.users.filter(
       (user) =>
         user.name.first.toLowerCase().includes(this.state.search.toLowerCase()) === this.state.search.toLowerCase().includes(this.state.search.toLowerCase()) ||
-        user.name.last.toLowerCase() === this.state.search.toLowerCase()
+        user.name.last.toLowerCase() === this.state.search.toLowerCase().includes(this.state.search.toLowerCase())
     );
     this.setState({ users: result });
 
@@ -77,6 +77,8 @@ class SearchEmployees extends Component {
 
   render() {
     return (
+
+    
       <Container>
         <Sort
           sortAscending={this.sortAscending}
